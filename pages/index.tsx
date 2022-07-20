@@ -1,15 +1,19 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { Parallax } from "@react-spring/parallax";
+import Link from "next/link";
+import { Slide1 } from "../components/landingComponent/Slide1/Slide1BG";
+import { Slide1LeftButton } from "../components/landingComponent/Slide1/Slide1ButtonLeft";
+import { Slide1RightButton } from "../components/landingComponent/Slide1/Slide1ButtonRight";
+import { Slide1Title } from "../components/landingComponent/Slide1/Slide1Title";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <Parallax pages={2}>
+      <Slide1 />
+      <Slide1Title />
+      <Slide1LeftButton />
+      <Slide1RightButton />
+    </Parallax>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
